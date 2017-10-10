@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="lab1.doc" default="create-javadoc" basedir=".">
+
+    <target name="create-javadoc" description="documentation" depends="">
+        <property name="app.name"    value="lab1" />
+        <property name="app.author"  value="Evgeniia Zubrich" />
+        <property name="dir.src"     value="./src" />
+        <property name="dir.doc"     value="./doc" />
+        <mkdir dir="${dir.doc}" />
+
+        <javadoc destdir="${dir.doc}"
+                 use="true"
+                 private="true"
+                 author="${app.author}"
+                 windowtitle="${app.name} API"
+                 doctitle="${app.name}" >
+            <fileset dir="${dir.src}">
+                <include name="com/lab111/labwork2/**"/>
+            </fileset>
+        </javadoc>
+    </target>
+</project>
