@@ -4,13 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Directory in file system; A catalogue may contain files and other directories
+ * Directory in file system; A Catalogue may contain files and other directories
  */
-public class Catalogue implements FileObject {
+public class Catalogue extends FileObject {
     /**
      * Files and directories contained in this directory
      */
     private List<FileObject> fileObjects = new ArrayList <>();
+
+    /**
+     * Constructor of the directory;
+     * Initializes name of the directory
+     *
+     * @param name name of new file
+     */
+    Catalogue(String name){
+        this.setName(name);
+    }
 
     /**
      * Calculates the size of the directory
@@ -22,7 +32,6 @@ public class Catalogue implements FileObject {
         for (FileObject object : fileObjects) {
             totalSize += object.size();
         }
-        System.out.println("Total size of catalogue:" + totalSize);
         return totalSize;
     }
 
@@ -30,7 +39,9 @@ public class Catalogue implements FileObject {
      * Adds new file or catalogue in this directory
      * @param item new file object
      */
-    void add(FileObject item){
+    @Override
+    public void add(FileObject item){
+        item.setParent(this);
         fileObjects.add(item);
     }
 
@@ -38,8 +49,22 @@ public class Catalogue implements FileObject {
      * Removes a file or catalogue from this directory
      * @param item file object that have to be deleted
      */
-
+    @Override
     public void remove (FileObject item){
         fileObjects.remove(item);
     }
+
+    /**
+     * Prints the name,size and content of the directory
+     *
+     * @param tab retreat
+     */    @Override
+    public void print(String tab) {
+        System.out.println(tab+"Catalogue \""+this.getName()+"\". Size=" + size());
+        for (FileObject object : fileObjects) {
+            System.out.print(tab+"\t");
+            object.print("\t");
+        }
+    }
+
 }
