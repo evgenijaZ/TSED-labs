@@ -12,13 +12,13 @@ public class ValueMap {
         values = new ArrayList <>();
     }
 
-    public static ValueMap getInstance() {
+    static ValueMap getInstance() {
         if (instance == null)
             instance = new ValueMap();
         return instance;
     }
 
-    public void addValue(Point value) {
+    void addValue(Point value) {
         values.add(value);
     }
 
@@ -26,7 +26,7 @@ public class ValueMap {
         values.remove(value);
     }
 
-    public void plot(){
+    void plot(){
         for(Point value: values){
             Formatter formatterLine = new Formatter();
             formatterLine.format("%.1f;\t%.1f",value.getX(),value.getY());
