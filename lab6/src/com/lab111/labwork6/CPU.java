@@ -1,5 +1,8 @@
 package com.lab111.labwork6;
 
+/**
+ * central processor unit
+ */
 public class CPU implements StructureElement {
     private int bitRate_bit = 32;
     private double clockSpeed_GHz;
@@ -8,8 +11,16 @@ public class CPU implements StructureElement {
     private int loadedCores;
     private double freeCacheMemory_Kb;
 
-    public CPU(int bitRate_bit, double clockSpeed_GHz, double cacheMemory_Kb, int numberOfCores) {
-        if(bitRate_bit==32||bitRate_bit==64)
+    /**
+     * Constructor
+     *
+     * @param bitRate_bit    processor architecture
+     * @param clockSpeed_GHz clock speed
+     * @param cacheMemory_Kb capacity of cache memory
+     * @param numberOfCores  the number of cores
+     */
+    CPU(int bitRate_bit, double clockSpeed_GHz, double cacheMemory_Kb, int numberOfCores) {
+        if (bitRate_bit == 32 || bitRate_bit == 64)
             this.bitRate_bit = bitRate_bit;
         else System.out.println("Invalid bit rate");
         this.clockSpeed_GHz = clockSpeed_GHz;
@@ -20,6 +31,11 @@ public class CPU implements StructureElement {
 
     }
 
+    /**
+     * load cores
+     *
+     * @param numberOfCores cores for loading
+     */
     void loadCores(int numberOfCores) {
         if (numberOfCores > this.numberOfCores || numberOfCores <= 0) {
             System.out.println("The number of cores to load must be between 1 and " + this.numberOfCores);
@@ -28,12 +44,18 @@ public class CPU implements StructureElement {
         loadedCores = numberOfCores;
     }
 
-    void executeProcess(double amountOfInformation_Gb, int bitRate_bit){
-        if(this.bitRate_bit>bitRate_bit) {
+    /**
+     * execute a process
+     *
+     * @param amountOfInformation_Gb amount of memory
+     * @param bitRate_bit            an architecture of the process
+     */
+    void executeProcess(double amountOfInformation_Gb, int bitRate_bit) {
+        if (this.bitRate_bit > bitRate_bit) {
             System.out.println("It is impossible to start a process of this bit depth");
             return;
         }
-        if(this.freeCacheMemory_Kb<amountOfInformation_Gb) {
+        if (this.freeCacheMemory_Kb < amountOfInformation_Gb) {
             System.out.println("There is no free cache in the CPU");
             return;
         }

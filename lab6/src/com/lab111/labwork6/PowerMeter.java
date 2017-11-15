@@ -1,5 +1,8 @@
 package com.lab111.labwork6;
 
+/**
+ * visitor class; measures power
+ */
 public class PowerMeter implements Visitor {
 
     @Override
@@ -17,12 +20,17 @@ public class PowerMeter implements Visitor {
         return videoCard.getDegreeOfWorkload() * 110;
     }
 
+    /**
+     * total power of elements
+     *
+     * @param elements array of arguments (structure elements)
+     * @return total power of all elements
+     */
     double getTotalPower(StructureElement... elements) {
         double totalPower = 0;
         for (StructureElement element : elements) {
             totalPower += element.accept(this);
         }
         return totalPower;
-
     }
 }
