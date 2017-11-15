@@ -1,5 +1,8 @@
 package com.lab111.labwork5;
 
+/**
+ * regular cell
+ */
 class Cell {
     private String name;
     private Class type;
@@ -31,6 +34,12 @@ class Cell {
         this.value = value;
     }
 
+    /**
+     * create a new one foreign key cell based on the old cell
+     *
+     * @param pkCell link to primary key for foreign key
+     * @return new foreign key cell
+     */
     ForeignKeyCell makeFKCell(PrimaryKeyCell pkCell) {
         return new ForeignKeyCell(name, type, pkCell);
     }
