@@ -11,7 +11,7 @@ public class ForeignKeyCell extends Cell {
     }
 
     ForeignKeyCell(Mediator mediator, Cell cell, PrimaryKeyCell pkCell) {
-        super(mediator, cell.getName(), null);
+        super(mediator, cell.getName(), cell.getValue());
         setValue(pkCell.getValue());
         if (this.value == null)
             System.out.println("\nWarning! There isn`t any primary keys with this value: " + pkCell.getValue());
