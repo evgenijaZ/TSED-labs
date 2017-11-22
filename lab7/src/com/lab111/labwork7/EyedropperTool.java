@@ -5,7 +5,7 @@ import java.util.Random;
 public class EyedropperTool implements GraphicTool {
 
     @Override
-    public void draw(int x, int y) {
+    public void rightClick(int x, int y) {
         Random random = new Random();
         int R = random.nextInt(256);
         int G = random.nextInt(256);
