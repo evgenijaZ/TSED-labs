@@ -1,9 +1,23 @@
 package com.lab111.labwork5_Mediator;
 
+/**
+ * cell in a table
+ */
 public class Cell {
-   protected Mediator mediator;
-   protected String name;
-   protected Object value;
+    /**
+     * name of the cell
+     */
+    protected String name;
+
+    /**
+     * value of the cell
+     */
+    protected Object value;
+
+    /**
+     * mediator for connection between cells
+     */
+    Mediator mediator;
 
     public Cell(Mediator mediator, String name, Object value) {
         this.mediator = mediator;
@@ -18,7 +32,6 @@ public class Cell {
     public void setValue(Object value) {
         this.value = value;
     }
-
 
     public String getName() {
         return name;

@@ -21,7 +21,7 @@ public class Main {
 
         binomialName.setValue(mediator,"Last Name", 0,"Cuniculus");
         binomialName.setValue(mediator,"First Name", 0,"Oryctolagus");
-        binomialName.setFKValue(mediator,"idFamily",0, family, "id", 7);
+        binomialName.setFKValue(mediator,"idFamily",0, family, "id", 0);
 
 
         binomialName.print();

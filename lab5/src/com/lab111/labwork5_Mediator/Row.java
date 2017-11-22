@@ -13,16 +13,32 @@ public class Row {
      */
     private Map <String, Cell> cells = new HashMap <>();
 
+    /**
+     * add cell
+     *
+     * @param cell new one cell in map
+     */
     void addCell(Cell cell) {
         cells.put(cell.getName(), cell);
     }
 
+    /**
+     * get cell by name
+     *
+     * @param key name of a cell
+     * @return the cell
+     */
     Cell getCell(String key) {
         return cells.get(key);
     }
 
-    void deleteCell(String name){
-    cells.remove(name);
+    /**
+     * delete cell by name
+     *
+     * @param name name of the cell
+     */
+    void deleteCell(String name) {
+        cells.remove(name);
     }
 }
 

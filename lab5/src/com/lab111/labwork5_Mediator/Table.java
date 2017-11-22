@@ -105,7 +105,7 @@ public class Table {
         PrimaryKeyCell foreignCell = new PrimaryKeyCell(null, foreignColumnName, value);
         if (foreignRow != null)
             foreignCell = new PrimaryKeyCell(mediator, foreignRow.getCell(foreignColumnName));
-        if (!(cell instanceof ForeignKeyCell))
+        if (!(cell instanceof PrimaryKeyCell))
             cell = new ForeignKeyCell(mediator, cell, foreignCell);
         else {
             System.out.println("Cell can`t be changed");
@@ -118,6 +118,13 @@ public class Table {
         }
     }
 
+    /**
+     * delete PrimaryKeyCell from row and mediator
+     *
+     * @param mediator   Mediator
+     * @param columnName name of a column with the cell
+     * @param value      value of the cell
+     */
     void deletePKCell(Mediator mediator, String columnName, Object value) {
         PrimaryKeyCell primaryKeyCell = mediator.getPKCell(columnName, value);
         primaryKeyCell.setValue(null);
@@ -144,15 +151,13 @@ public class Table {
                 if (cell != null && cell.getValue() != null)
                     output.append(cell.getValue()).append("\t\t");
                 else {
-                     output.append("null \t\t\t");
+                    output.append("null \t\t\t");
 //                    output = new StringBuilder();
 //                    break;
                 }
-
             }
             System.out.println(output);
         }
         System.out.println();
     }
-
 }
