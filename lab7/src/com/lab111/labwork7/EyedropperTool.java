@@ -12,4 +12,14 @@ public class EyedropperTool implements GraphicTool {
         int B = random.nextInt(256);
         System.out.println("Color at position " + x + " " + y + "is (" + R + "," + G + "," + B + ")");
     }
+
+    @Override
+    public void leftClick(int x, int y) {
+        System.out.println("This action isn`t determined in eyedropper tool");
+    }
+
+    @Override
+    public void dragAndDrop(int startX, int startY, int endX, int endY) {
+        System.out.println("This action isn`t determined in eyedropper tool");
+    }
 }
