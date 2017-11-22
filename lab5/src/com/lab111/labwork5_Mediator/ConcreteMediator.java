@@ -52,6 +52,24 @@ public class ConcreteMediator implements Mediator {
     }
 
     /**
+     * get fkCell from the list
+     *
+     * @param name  name of cell
+     * @param value value of cell
+     * @return ForeignKeyCell
+     */
+    @Override
+    public ForeignKeyCell getFKCell(String name, Object value) {
+        for (ForeignKeyCell fkCell : fkCells) {
+            if (fkCell.getName().equals(name) && fkCell.getValue() == value)
+                return fkCell;
+        }
+        return null;
+    }
+
+
+
+    /**
      * send message with value from one cell to another
      *
      * @param value a value for sending

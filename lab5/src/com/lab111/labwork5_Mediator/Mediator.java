@@ -28,11 +28,21 @@ public interface Mediator {
     void addCell(ForeignKeyCell cell);
 
     /**
-     * get PKcell from the list
+     * get pkCell from the list
      *
      * @param name  name of cell
      * @param value value of cell
      * @return PrimaryKeyCell
      */
     PrimaryKeyCell getPKCell(String name, Object value);
+
+
+    /**
+     * get fkCell from the list
+     *
+     * @param name  name of cell
+     * @param value value of cell
+     * @return ForeignKeyCell
+     */
+    ForeignKeyCell getFKCell(String name, Object value);
 }
