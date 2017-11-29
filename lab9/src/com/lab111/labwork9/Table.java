@@ -4,8 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Table {
+    /**
+     * name of table
+     */
     private String name;
+    /**
+     * primary key field
+     */
     private PrimaryKeyField primaryKeyField = null;
+    /**
+     * list of fields in the table
+     */
     private List <Field> fields = null;
 
     Table(String name) {

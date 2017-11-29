@@ -4,12 +4,19 @@ import java.io.FileReader;
 import java.io.IOException;
 
 class Loader {
+    /**
+     * builder
+     */
     private Builder builder;
 
     Loader(Builder builder) {
         this.builder = builder;
     }
 
+    /**
+     * read table properties from file and create new tables
+     * @param path path to file
+     */
     void buildTable(String path) {
         try (FileReader reader = new FileReader(path)) {
             int currentChar;
