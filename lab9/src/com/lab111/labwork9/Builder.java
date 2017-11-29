@@ -11,9 +11,9 @@ public abstract class Builder {
         table = new Table(name);
     }
 
-    public abstract void buildPrimaryKeyField(String name, Class type);
+    public abstract void buildPrimaryKeyField(String name, String type);
 
-    public abstract void buildField(String name, Class type);
+    public abstract void buildField(String name, String type);
 
-    public abstract void buildForeignKeyField(String name, Class type);
+    public abstract void buildForeignKeyField(String name, String type);
 }
