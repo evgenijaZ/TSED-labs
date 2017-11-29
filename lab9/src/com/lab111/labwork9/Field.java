@@ -11,6 +11,6 @@ public class Field {
 
     @Override
     public String toString() {
-        return (name + "\t" + type + "\n");
+        return (name + "\t| " + type + "\t|");
     }
 }

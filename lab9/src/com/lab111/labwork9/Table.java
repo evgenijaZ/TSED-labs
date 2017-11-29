@@ -1,5 +1,6 @@
 package com.lab111.labwork9;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Table {
@@ -8,16 +9,20 @@ public class Table {
     private List <Field> fields = null;
 
     public Table(String name) {
+        fields = new ArrayList <>();
         this.name = name;
     }
 
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        result.append(primaryKeyField.toString());
+        result.append(name).append('\n')
+                .append("===============================").append("\n")
+                .append(primaryKeyField.toString()).append("\n");
         for (Field field : fields) {
-            result.append(field.toString());
+            result.append(field.toString()).append("\n");
         }
+        result.append("===============================").append("\n");
         return result.toString();
     }
 

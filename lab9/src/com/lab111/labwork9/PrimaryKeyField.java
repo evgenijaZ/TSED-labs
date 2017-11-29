@@ -8,6 +8,6 @@ public class PrimaryKeyField extends Field {
 
     @Override
     public String toString() {
-        return (name + "\t" + type + " PK\n");
+        return (super.toString() + " PK");
     }
 }

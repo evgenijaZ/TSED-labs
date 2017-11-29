@@ -7,6 +7,6 @@ public class ForeignKeyField extends Field {
 
     @Override
     public String toString() {
-        return (name + "\t" + type + " FK\n");
+        return (super.toString() + " FK");
     }
 }
