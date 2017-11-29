@@ -3,14 +3,14 @@ package com.lab111.labwork9;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class Loader {
-    Builder builder;
+class Loader {
+    private Builder builder;
 
-    public Loader(Builder builder) {
+    Loader(Builder builder) {
         this.builder = builder;
     }
 
-    public void buildTable(String path) {
+    void buildTable(String path) {
         try (FileReader reader = new FileReader(path)) {
             int currentChar;
             while ((currentChar = reader.read()) != -1) {
@@ -23,7 +23,6 @@ public class Loader {
                 currentChar = reader.read();
                 while ((char) currentChar != '}') {
                     buffer = new StringBuilder();
-                    char c = (char) currentChar;
                     while ((char) currentChar != ' ') {
                         buffer.append((char) currentChar);
                         currentChar = reader.read();
@@ -55,6 +54,7 @@ public class Loader {
                     }
                 }
                 System.out.println(builder.getTable().toString());
+                currentChar = reader.read();
             }
             reader.close();
         } catch (IOException ex) {

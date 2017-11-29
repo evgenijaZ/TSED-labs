@@ -1,7 +1,7 @@
 package com.lab111.labwork9;
 
 public class ForeignKeyField extends Field {
-    public ForeignKeyField(String name, String type) {
+    ForeignKeyField(String name, String type) {
         super(name, type);
     }
 

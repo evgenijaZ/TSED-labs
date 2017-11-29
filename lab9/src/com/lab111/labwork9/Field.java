@@ -4,7 +4,7 @@ public class Field {
     protected String name;
     protected String type;
 
-    public Field(String name, String type) {
+    Field(String name, String type) {
         this.name = name;
         this.type = type;
     }

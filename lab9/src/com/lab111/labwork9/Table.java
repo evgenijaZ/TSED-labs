@@ -8,13 +8,16 @@ public class Table {
     private PrimaryKeyField primaryKeyField = null;
     private List <Field> fields = null;
 
-    public Table(String name) {
+    Table(String name) {
         fields = new ArrayList <>();
         this.name = name;
     }
 
     @Override
     public String toString() {
+        if (primaryKeyField == null) {
+            return ("PK is null in " + name);
+        }
         StringBuilder result = new StringBuilder();
         result.append(name).append('\n')
                 .append("===============================").append("\n")
